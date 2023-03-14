@@ -3,8 +3,8 @@ import args
 
 
 params = [
-    ["^[_0-9]+", lambda match, payload: float(match.group(0))],
-    ["^\(", lambda match, payload: args.parse_nest(payload, True)],
+    [r"^[_0-9]+", lambda match, payload: float(match.group(0))],
+    [r"^\(", lambda match, payload: args.parse_nest(payload, True)],
 ]
 
 
