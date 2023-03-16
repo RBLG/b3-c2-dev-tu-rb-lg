@@ -1,6 +1,6 @@
 import re
-import operators as ops
-import parameters as pms
+from src import operators as ops
+from src import parameters as pms
 
 ######################################################################
 

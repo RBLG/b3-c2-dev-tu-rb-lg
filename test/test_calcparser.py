@@ -1,6 +1,6 @@
 # try:
-import calcparser
-import operators as ops
+import src.calcparser as parser
+import src.operators as ops
 
 # except:
 #    pass

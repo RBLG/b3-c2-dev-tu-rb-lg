@@ -1,5 +1,5 @@
 import re
-import calcparser
+from src import calcparser
 
 
 params = [

@@ -1,6 +1,6 @@
 from ast import List
 import args
-import calcparser
+from src import calcparser
 
 
 input: str = args.get_input()
