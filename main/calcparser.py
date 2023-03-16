@@ -1,21 +1,6 @@
-import sys
 import re
-import operators
-import parameters
-
-
-######################################################################
-
-
-def get_input() -> str:
-    input: str = ""
-    args = sys.argv.copy()
-    args.pop(0)
-    for arg in args:
-        input += arg + " "
-
-    return input
-
+import operators as ops
+import parameters as pms
 
 ######################################################################
 
@@ -42,7 +27,7 @@ def compute(line: str) -> float:
 
 
 def parse_nest(pl: Payload, nested: bool) -> float:
-    result = parameters.parse(pl)
+    result = pms.parse(pl)
     while True:
         ignore_whitespace(pl)
         if parse_end_of_input(pl):
@@ -54,13 +39,13 @@ def parse_nest(pl: Payload, nested: bool) -> float:
                 raise Exception("Syntaxe invalide: fin attendue, trouve ')'")
             break
 
-        op = operators.parse(pl)
+        op = ops.parse(pl)
         if op is None:
             msg = "Syntaxe invalide: operateur attendu a " + str(pl.get_index())
             raise Exception(msg)
 
         ignore_whitespace(pl)
-        param2 = parameters.parse(pl)
+        param2 = pms.parse(pl)
         if param2 is None:
             msg = "Syntaxe invalide: parametre attendu a " + str(pl.get_index())
             raise Exception(msg)
@@ -89,3 +74,6 @@ def parse_end_of_nest(payload) -> bool:
 
 def parse_end_of_input(payload) -> bool:
     return re.search(r"^$", payload.line) is not None
+
+
+
