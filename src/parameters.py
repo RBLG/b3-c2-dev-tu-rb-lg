@@ -1,10 +1,10 @@
 import re
-from src import calcparser
+from src import parser
 
 
 params = [
     [r"^[_0-9]+", lambda match, payload: float(match.group(0))],
-    [r"^\(", lambda match, payload: calcparser.parse_nest(payload, True)],
+    [r"^\(", lambda match, payload: parser.parse_nest(payload, True)],
 ]
 
 
