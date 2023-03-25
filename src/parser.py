@@ -60,7 +60,7 @@ def parse_nest(pl: Payload, nested: bool) -> float:
 
 
 def ignore_whitespace(payload: Payload):
-    match = re.search(r"^[\t ]+", payload.line)
+    match = re.search(r"^[\t\r\n ]+", payload.line)
     if match is not None:
         payload.line = payload.line[len(match.group(0)) :]
 

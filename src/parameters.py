@@ -14,5 +14,5 @@ def parse(payload) -> float or None:
         if match is not None:
             payload.line = payload.line[len(match.group(0)) :]
             return param[1](match, payload)
-
+    
     return None
