@@ -61,7 +61,7 @@ def test_compute_single_pow():
 
 
 def test_compute_op_chain():
-    input = "7%3 ^2 +6 /5 -6 *-7" # 7%3-> 2^2-> 4+6-> 10/5-> 2-6-> -4*-7-> 28
+    input = "8 %3 ^2 +6 /5 -6 *-7" # 8%3-> 2^2-> 4+6-> 10/5-> 2-6-> -4*-7-> 28
     output = parser.compute(input)
     assert output == 28
 
