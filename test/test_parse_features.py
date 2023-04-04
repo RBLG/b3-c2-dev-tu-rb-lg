@@ -61,30 +61,8 @@ def test_compute_single_pow():
 
 
 def test_compute_op_chain():
-    input = "1+1*2^2-1/2%3"
+    input = "7%3 ^2 +6 /5 -6 *-7" # 7%3-> 2^2-> 4+6-> 10/5-> 2-6-> -4*-7-> 28
     output = parser.compute(input)
-    assert output == 2
+    assert output == 28
 
-
-def test_compute_single_sub():
-    input = "1-1"
-    output = parser.compute(input)
-    assert output == 2
-
-
-def test_compute_single_sub():
-    input = "1-1"
-    output = parser.compute(input)
-    assert output == 2
-
-
-def test_compute_single_sub():
-    input = "1-1"
-    output = parser.compute(input)
-    assert output == 2
-
-
-def test_compute_single_sub():
-    input = "1-1"
-    output = parser.compute(input)
-    assert output == 2
+# manque des tests, mais pas eu le temps
